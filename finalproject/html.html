@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body style="background-color: #E7DCCB;">
+
+    <header>
+        
+        <div style="display: flex;"> 
+            <h1 style="padding-left: 37%;">Student Management System</h1>
+        </div>
+        
+    </header>
+    
+    
+    <section style="height:140vh;border:50px solid rgb(53, 203, 151); border-radius: 50px;display: flex;background-color: rgb(53, 203, 151);">
+
+        <!-- we used flex in here because our section part need 3 vertical divs. -->
+        
+        <div style="flex:25;">  <!-- left side of the section part -->
+                                                                            <!-- dont need to use flex in here because we will make our 
+                                                                            boxes horizantally in this part. -->
+        
+            <br>
+            <br>
+            <br>
+            <div class="section_div_leftside_boxes">  <!-- created class because We will use 3 divs of the same size
+            Thanks to a single class, we will be able to apply the design we want to all of them.    -->
+
+                
+                    <!-- Adding lecture part. -->
+                <div class="addLecture container">
+                    <h1>Add/Update Lecture</h1>
+                <form>
+                    <label>Lecture Name</label> <br>
+                    <input type="text" name="lectureName" id="lectureName" required><br>
+                    <label>Lecture Code</label> <br>
+                    <input type="text" min="1" name="lectureCode" id="lectureCode" required><br>
+                    <label>Pointscale</label> <br>
+                    <select id="pointScale">
+                        <option value="7">7</option>
+                        <option value="10">10</option>
+                    </select> <br>
+                    <div style="display: flex;justify-content: space-between;">
+                        <input type="submit" class="btn" id="addLectureButton" value="Add" onclick="addLecture(event)">
+                    <input type="submit" class="btn" id="updateLectureButton" value="Update" onclick="updateLecture(event)">
+                    </div>
+                </form>
+                </div>
+                <br>
+                <!-- Adding Student -->
+                <div class="addStudent container">
+                    <h1>Add & Update Student</h2>
+                <form>
+                    <label>Student Name</label> <br>
+                    <input type="text" name="studentName" id="studentName" required><br>
+                    <label>Student Surname</label> <br>
+                    <input type="text" name="studentSurname" id="studentSurname" required><br>
+                    <label>Student ID</label> <br>
+                    <input type="number" min="1" name="studentId" id="studentId" required><br><br>
+                    <div style="display: flex;justify-content: space-between;">
+                    <input type="submit" class="btn" id="addStudentButton" value="Add" onclick="addStudent(event)">
+                    <input type="submit" class="btn" id="updateStudentButton" value="Update" onclick="updateStudent(event)">
+                    </div>
+                    
+                </form>
+                </div>
+
+                <br>
+                <!-- Searching Lecture -->
+                <div class="searchLecture container">
+                    <h1>Search Lecture</h2>
+                    <form id="searchLectureForm">
+                        <label>Lecture Name</label>
+                        <input type="text" name="search-lectureName" id="search-lectureName" required><br> <br>
+                        <input class="btn" type="submit" id="searchLectureButton" value="Search Lecture" onclick="searchLecturesByName(event)">
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- middle side of the section part. 
+        again we dont need to use flex in here. using default horizontally
+        created divs.-->
+
+            
+        <div style="flex:60 ;">
+        
+            <div class="section_div_middle">
+
+                <!-- Creation of buttons for display students and lessons -->
+            <div class="listButtons">
+                <h3 class="resultHeader">Results</h3>
+                <button class="btn" id="listStudentsButton" onclick="createStudentsTable()">List Students</button>
+                <button class="btn" id="listLecturesButton" onclick="createLecturesTable()">List Lectures</button>
+            </div>
+            <br>
+            <!-- Table for the results -->
+            <div class="resultTable">
+                <table id="resultTable">
+                    <thead id="resultTableHead">
+                    </thead>
+                    <tbody id="resultTableBody">
+                    </tbody>
+                </table>
+
+            </div>
+    
+            </div>
+
+        </div>
+
+        <!-- right side of the section part.
+        -->
+        
+        
+        <div style="flex:25 ;"> 
+                                                                        
+        
+            <br>
+            <br>
+            <br>
+            <div>
+
+                <br><br>
+                <!-- Searching Student -->
+                <div class="searchStudent container">
+                    <h1>Search Student</h2>
+                    <form>
+                        <label>Student Name</label> <br>
+                        <input type="text" name="search-studentName" id="search-studentName" required><br> <br>
+                        <input type="submit" class="btn" id="searchStudentButton" value="Search Student"
+                            onclick="searchStudentsByName(event)">
+                    </form>
+                </div>
+                <br>
+                <!-- Student enrolls to the lecture -->
+                <div class="addStudentToLecture container">
+                    <h1>Add Student to Lecture</h2>
+                    <form >
+                        <label>Student ID</label> <br>
+                        <input type="text" name="add-studentId" id="add-studentId" required><br>
+                        <label>Lecture Code</label> <br>
+                        <input type="text" name="add-lectureCode" id="add-lectureCode" required><br>
+                        <label>Midterm Score</label> <br>
+                        <input type="number" min="0" max="100" name="midtermScore" id="midtermScore" required><br>
+                        <label>Final Score</label> <br>
+                        <input type="number" name="finalScore" id="finalScore" required><br><br>
+                        <div style="display: flex;justify-content: space-between;">
+                            <input type="submit" class="btn" id="addStudentToLectureButton" value="Add"
+                            onclick="addSTLButton(event)">
+                            <input type="submit" class="btn" id="updateStudentToLectureButton" value="update"
+                            onclick="updateSTLButton(event)">
+                        </div>    
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+</body>
+</html>

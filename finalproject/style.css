@@ -1,0 +1,120 @@
+.section_div_leftside_boxes {
+
+
+    border-width: 2px;    /*Giving boxes a spesific location to left side of the section.   */
+    width: 60%;
+    height: 10%;
+    margin-left: 20%;
+    margin-top: 15%;
+    
+
+}
+
+.section_div_middle {       /* Arranging space between table and buttons  */
+
+    width: 60%;
+    height: 60%;
+    text-align: center;
+    margin-top: 15%;
+    margin-left:0.5%;
+
+}
+
+.section_div_rightside_boxes{
+                                    /*Giving boxes a spesific location to right side of the section.  */
+            
+    margin: 20%;
+    
+}
+
+.listButtons{
+    margin-left: 53%;                     /* arranging position and giving color to buttons  */
+    background-color: #E7DCCB;
+}
+
+body{
+    background-color: #f2f2f2;
+
+}
+
+.container{
+    padding: 10px;                   /* Related to the hole dives nearby section part. they share the same features.   */
+    border-radius: 15px;
+    text-align: center;
+    background-color: #f2f2f2;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 0 auto;
+    border: 0;
+    background-color: #E7DCCB;
+}
+
+         /* features of table.  */ 
+        
+table {
+    width: 700px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+        
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+        
+th {
+    text-align: left;
+}
+        
+thead th{
+    background-color: #55608f;
+}
+        
+tbody tr:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+        /* features of all buttons. */
+
+.btn {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+}
+
+
+.btn:hover {
+  background-color: #2c974b;
+}
+
+.btn:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.btn:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.btn:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
